@@ -94,7 +94,7 @@ export default function Hero({ scrollTo }) {
         <BtnPrimary onClick={() => scrollTo('projects')}>VIEW PROJECTS</BtnPrimary>
         <BtnSecondary onClick={() => scrollTo('contact')}>CONTACT ME</BtnSecondary>
         <a
-          href="/Vinay_Rajput_Resume%20%282%29.pdf"
+          href="/Vinay_Rajput_Resume.pdf"
           download="Vinay_Rajput_Resume.pdf"
           style={{
             display: 'inline-flex',
