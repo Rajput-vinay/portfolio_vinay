@@ -1,6 +1,8 @@
 import React from 'react';
 import { BtnPrimary, BtnSecondary } from './UI';
 
+const PROFILE_IMAGE = 'https://avatars.githubusercontent.com/u/105452265?s=400&u=9f5fc5f3abe67eba5f3852e86b81d8dbbc7d6096&v=4';
+
 const SOCIALS = [
   { label: 'GitHub ↗',   href: 'https://github.com/Rajput-vinay' },
   { label: 'LinkedIn ↗', href: 'https://linkedin.com/in/vinay-rajput-984668227' },
@@ -42,86 +44,98 @@ export default function Hero({ scrollTo }) {
         maxWidth: '1100px', margin: '0 auto', position: 'relative', zIndex: 1,
       }}
     >
-      <div style={{
-        fontFamily: "'Space Mono', monospace", color: 'var(--cyan)',
-        fontSize: '0.75rem', letterSpacing: '4px', marginBottom: '1.5rem',
-        display: 'flex', alignItems: 'center', gap: '0.5rem',
-        opacity: 0, animation: 'fadeUp 0.6s 0.2s forwards',
-      }}>
-        <span style={{
-          width: '8px', height: '8px', borderRadius: '50%',
-          background: 'var(--cyan)', display: 'inline-block', animation: 'pulse 1.5s infinite',
-        }} />
-        AVAILABLE FOR OPPORTUNITIES
+      <div className="hero-photo-wrap">
+        <div className="hero-photo-ring" />
+        <img
+          className="hero-photo"
+          src={PROFILE_IMAGE}
+          alt="Vinay Rajput"
+          loading="eager"
+        />
       </div>
 
-      <h1 style={{
-        fontSize: 'clamp(3rem, 8vw, 7rem)', fontWeight: 800,
-        lineHeight: 1, letterSpacing: '-2px',
-        opacity: 0, animation: 'fadeUp 0.6s 0.4s forwards',
-      }}>
-        Vinay{' '}
-        <span style={{ color: 'var(--cyan)', position: 'relative' }}>
-          Rajput
+      <div className="hero-content">
+        <div style={{
+          fontFamily: "'Space Mono', monospace", color: 'var(--cyan)',
+          fontSize: '0.75rem', letterSpacing: '4px', marginBottom: '1.5rem',
+          display: 'flex', alignItems: 'center', gap: '0.5rem',
+          opacity: 0, animation: 'fadeUp 0.6s 0.2s forwards',
+        }}>
           <span style={{
-            position: 'absolute', bottom: '4px', left: 0, right: 0,
-            height: '3px', background: 'var(--cyan)', opacity: 0.4,
+            width: '8px', height: '8px', borderRadius: '50%',
+            background: 'var(--cyan)', display: 'inline-block', animation: 'pulse 1.5s infinite',
           }} />
-        </span>
-      </h1>
+          AVAILABLE FOR OPPORTUNITIES
+        </div>
 
-      <p style={{
-        fontFamily: "'Space Mono', monospace", fontSize: '1rem',
-        color: 'var(--muted)', marginTop: '1rem', letterSpacing: '2px',
-        opacity: 0, animation: 'fadeUp 0.6s 0.6s forwards',
-      }}>
-        // Software Developer · Agra, India
-      </p>
+        <h1 style={{
+          fontSize: 'clamp(3rem, 8vw, 7rem)', fontWeight: 800,
+          lineHeight: 1, letterSpacing: '-2px',
+          opacity: 0, animation: 'fadeUp 0.6s 0.4s forwards',
+        }}>
+          Vinay{' '}
+          <span style={{ color: 'var(--cyan)', position: 'relative' }}>
+            Rajput
+            <span style={{
+              position: 'absolute', bottom: '4px', left: 0, right: 0,
+              height: '3px', background: 'var(--cyan)', opacity: 0.4,
+            }} />
+          </span>
+        </h1>
 
-      <p style={{
-        maxWidth: '520px', marginTop: '1.5rem', color: 'var(--muted)',
-        lineHeight: 1.8, fontSize: '0.95rem',
-        opacity: 0, animation: 'fadeUp 0.6s 0.8s forwards',
-      }}>
-        Full-stack developer passionate about building scalable web applications and
-        AI-powered tools. Proficient in the MERN stack with hands-on industry experience.
-      </p>
+        <p style={{
+          fontFamily: "'Space Mono', monospace", fontSize: '1rem',
+          color: 'var(--muted)', marginTop: '1rem', letterSpacing: '2px',
+          opacity: 0, animation: 'fadeUp 0.6s 0.6s forwards',
+        }}>
+          // Software Developer · Agra, India
+        </p>
 
-      <div style={{
-        marginTop: '2.5rem', display: 'flex', gap: '1rem', flexWrap: 'wrap',
-        opacity: 0, animation: 'fadeUp 0.6s 1s forwards',
-      }}>
-        <BtnPrimary onClick={() => scrollTo('projects')}>VIEW PROJECTS</BtnPrimary>
-        <BtnSecondary onClick={() => scrollTo('contact')}>CONTACT ME</BtnSecondary>
-        <a
-          href="/Vinay_Rajput_Resume.pdf"
-          download="Vinay_Rajput_Resume.pdf"
-          style={{
-            display: 'inline-flex',
-            alignItems: 'center',
-            justifyContent: 'center',
-            padding: '0.75rem 2rem',
-            background: 'transparent',
-            color: 'var(--cyan)',
-            fontWeight: 700,
-            border: '1px solid var(--border2)',
-            cursor: 'pointer',
-            fontFamily: "'Space Mono', monospace",
-            fontSize: '0.78rem',
-            letterSpacing: '2px',
-            textDecoration: 'none',
-            transition: 'background 0.2s, transform 0.2s',
-          }}
-        >
-          DOWNLOAD RESUME ↓
-        </a>
-      </div>
+        <p style={{
+          maxWidth: '520px', marginTop: '1.5rem', color: 'var(--muted)',
+          lineHeight: 1.8, fontSize: '0.95rem',
+          opacity: 0, animation: 'fadeUp 0.6s 0.8s forwards',
+        }}>
+          Full-stack developer passionate about building scalable web applications and
+          AI-powered tools. Proficient in the MERN stack with hands-on industry experience.
+        </p>
 
-      <div style={{
-        marginTop: '2rem', display: 'flex', gap: '0.75rem', flexWrap: 'wrap',
-        opacity: 0, animation: 'fadeUp 0.6s 1.2s forwards',
-      }}>
-        {SOCIALS.map((s, i) => <SocialLink key={i} {...s} />)}
+        <div style={{
+          marginTop: '2.5rem', display: 'flex', gap: '1rem', flexWrap: 'wrap',
+          opacity: 0, animation: 'fadeUp 0.6s 1s forwards',
+        }}>
+          <BtnPrimary onClick={() => scrollTo('projects')}>VIEW PROJECTS</BtnPrimary>
+          <BtnSecondary onClick={() => scrollTo('contact')}>CONTACT ME</BtnSecondary>
+          <a
+            href="/Vinay_Rajput_Resume.pdf"
+            download="Vinay_Rajput_Resume.pdf"
+            style={{
+              display: 'inline-flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              padding: '0.75rem 2rem',
+              background: 'transparent',
+              color: 'var(--cyan)',
+              fontWeight: 700,
+              border: '1px solid var(--border2)',
+              cursor: 'pointer',
+              fontFamily: "'Space Mono', monospace",
+              fontSize: '0.78rem',
+              letterSpacing: '2px',
+              textDecoration: 'none',
+              transition: 'background 0.2s, transform 0.2s',
+            }}
+          >
+            DOWNLOAD RESUME ↓
+          </a>
+        </div>
+
+        <div style={{
+          marginTop: '2rem', display: 'flex', gap: '0.75rem', flexWrap: 'wrap',
+          opacity: 0, animation: 'fadeUp 0.6s 1.2s forwards',
+        }}>
+          {SOCIALS.map((s, i) => <SocialLink key={i} {...s} />)}
+        </div>
       </div>
 
       <div style={{
