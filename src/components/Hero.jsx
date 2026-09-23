@@ -42,7 +42,6 @@ export default function Hero({ scrollTo }) {
         maxWidth: '1100px', margin: '0 auto', position: 'relative', zIndex: 1,
       }}
     >
-      {/* Tag */}
       <div style={{
         fontFamily: "'Space Mono', monospace", color: 'var(--cyan)',
         fontSize: '0.75rem', letterSpacing: '4px', marginBottom: '1.5rem',
@@ -56,7 +55,6 @@ export default function Hero({ scrollTo }) {
         AVAILABLE FOR OPPORTUNITIES
       </div>
 
-      {/* Name */}
       <h1 style={{
         fontSize: 'clamp(3rem, 8vw, 7rem)', fontWeight: 800,
         lineHeight: 1, letterSpacing: '-2px',
@@ -72,7 +70,6 @@ export default function Hero({ scrollTo }) {
         </span>
       </h1>
 
-      {/* Title */}
       <p style={{
         fontFamily: "'Space Mono', monospace", fontSize: '1rem',
         color: 'var(--muted)', marginTop: '1rem', letterSpacing: '2px',
@@ -81,7 +78,6 @@ export default function Hero({ scrollTo }) {
         // Software Developer · Agra, India
       </p>
 
-      {/* Description */}
       <p style={{
         maxWidth: '520px', marginTop: '1.5rem', color: 'var(--muted)',
         lineHeight: 1.8, fontSize: '0.95rem',
@@ -91,16 +87,36 @@ export default function Hero({ scrollTo }) {
         AI-powered tools. Proficient in the MERN stack with hands-on industry experience.
       </p>
 
-      {/* CTAs */}
       <div style={{
         marginTop: '2.5rem', display: 'flex', gap: '1rem', flexWrap: 'wrap',
         opacity: 0, animation: 'fadeUp 0.6s 1s forwards',
       }}>
         <BtnPrimary onClick={() => scrollTo('projects')}>VIEW PROJECTS</BtnPrimary>
         <BtnSecondary onClick={() => scrollTo('contact')}>CONTACT ME</BtnSecondary>
+        <a
+          href="/Vinay_Rajput_Resume%20%282%29.pdf"
+          download="Vinay_Rajput_Resume.pdf"
+          style={{
+            display: 'inline-flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            padding: '0.75rem 2rem',
+            background: 'transparent',
+            color: 'var(--cyan)',
+            fontWeight: 700,
+            border: '1px solid var(--border2)',
+            cursor: 'pointer',
+            fontFamily: "'Space Mono', monospace",
+            fontSize: '0.78rem',
+            letterSpacing: '2px',
+            textDecoration: 'none',
+            transition: 'background 0.2s, transform 0.2s',
+          }}
+        >
+          DOWNLOAD RESUME ↓
+        </a>
       </div>
 
-      {/* Socials */}
       <div style={{
         marginTop: '2rem', display: 'flex', gap: '0.75rem', flexWrap: 'wrap',
         opacity: 0, animation: 'fadeUp 0.6s 1.2s forwards',
@@ -108,7 +124,6 @@ export default function Hero({ scrollTo }) {
         {SOCIALS.map((s, i) => <SocialLink key={i} {...s} />)}
       </div>
 
-      {/* Scroll indicator */}
       <div style={{
         position: 'absolute', bottom: '3rem', left: '50%',
         transform: 'translateX(-50%)',
