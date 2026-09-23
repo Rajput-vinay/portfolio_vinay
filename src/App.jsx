@@ -7,10 +7,10 @@ import Skills      from './components/Skills';
 import Projects    from './components/Projects';
 import Experience  from './components/Experience';
 import Activities  from './components/Activities';
+import Certifications from './components/Certifications';
 import Contact     from './components/Contact';
 import Footer      from './components/Footer';
 
-/* ── Grid background ── */
 function GridBg() {
   return (
     <div style={{
@@ -23,7 +23,6 @@ function GridBg() {
   );
 }
 
-/* ── Cursor glow ── */
 function CursorGlow({ x, y }) {
   return (
     <div style={{
@@ -37,7 +36,6 @@ function CursorGlow({ x, y }) {
   );
 }
 
-/* ── Toast notification ── */
 function Toast({ message }) {
   if (!message) return null;
   return (
@@ -53,20 +51,17 @@ function Toast({ message }) {
   );
 }
 
-/* ── App ── */
 export default function App() {
   const [activeSection, setActiveSection] = useState('about');
   const [cursor, setCursor] = useState({ x: -999, y: -999 });
   const [toast, setToast] = useState('');
 
-  /* Track cursor */
   useEffect(() => {
     const onMove = e => setCursor({ x: e.clientX, y: e.clientY });
     window.addEventListener('mousemove', onMove);
     return () => window.removeEventListener('mousemove', onMove);
   }, []);
 
-  /* Active section via IntersectionObserver */
   useEffect(() => {
     const obs = new IntersectionObserver(
       entries => {
@@ -97,12 +92,13 @@ export default function App() {
       <Navbar active={activeSection} scrollTo={scrollTo} />
 
       <main>
-        <Hero       scrollTo={scrollTo} />
+        <Hero scrollTo={scrollTo} />
         <Qualification />
         <Skills />
         <Projects />
         <Experience />
         <Activities />
+        <Certifications />
         <Contact showToast={showToast} />
       </main>
 
