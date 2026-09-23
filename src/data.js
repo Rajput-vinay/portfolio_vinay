@@ -1,11 +1,27 @@
-export const NAV_ITEMS = ['about', 'qualification', 'skills', 'projects', 'experience', 'activities', 'contact'];
+export const NAV_ITEMS = ['about', 'qualification', 'skills', 'projects', 'experience', 'activities', 'certifications', 'contact'];
 
 export const PROJECTS = [
   {
     num: '01',
+    name: 'CampusSync',
+    live: true,
+    liveLink: 'https://campus-sync-phi.vercel.app/',
+    githubLink: 'https://github.com/Rajput-vinay/campus_sync',
+    tagline: 'MERN LMS & Institute Management Portal',
+    highlights: [
+      'Designed a scalable MERN-based Learning Management System (LMS) and Institute Management Portal for National Skill Training Institute (NSTI), Kanpur.',
+      'Built a multi-tenant architecture with Super Admin capabilities, Role-Based Access Control (RBAC), AI-driven timetable and exam generation, attendance tracking, and hostel management.',
+      'Streamlined workflows with automated email notifications and distance-based hostel allocation using Google Gemini AI, Inngest, Nodemailer, and PositionStack API.',
+    ],
+    stack: ['React.js', 'Node.js', 'Express.js', 'MongoDB', 'Tailwind CSS', 'Google Gemini AI', 'Inngest', 'Nodemailer', 'PositionStack API'],
+    deploy: 'Vercel',
+  },
+  {
+    num: '02',
     name: 'Vidya-Sankalp',
     live: true,
     liveLink:"https://vidya-sankalp.vercel.app/",
+    githubLink: 'https://github.com/Rajput-vinay',
     tagline: 'Ed-Tech Learning Platform',
     highlights: [
       'Built a fully functional ed-tech platform using the MERN stack ensuring a robust and interactive learning experience.',
@@ -16,10 +32,11 @@ export const PROJECTS = [
     deploy: 'Vercel',
   },
   {
-    num: '02',
+    num: '03',
     name: 'Thunder.ai',
     live: true,
     liveLink:"https://thunder-ai-sigma.vercel.app/",
+    githubLink: 'https://github.com/Rajput-vinay',
     tagline: 'AI-Powered Website Generator',
     highlights: [
       'Integrated Gemini AI for intelligent code generation — generate full React.js websites in under 5 minutes.',
@@ -60,17 +77,17 @@ export const EXPERIENCE = [
 ];
 
 export const QUALIFICATIONS = [
-  { year: '2019',    degree: 'Class X — Secondary',                      school: 'Agra Public School, Agra',                    pct: '80.6%' },
-  { year: '2021',    degree: 'Class XII — Senior Secondary',              school: 'Agra Public School, Agra',                    pct: '82.4%' },
-  { year: '2025',    degree: 'B.Tech — Computer Science Engineering',     school: 'Dr. Ram Manohar Lohia Avadh University',      pct: '79.8%' },
-  { year: 'Ongoing', degree: 'CITS — Computer Software Application',      school: 'National Skill Training Institute',            pct: 'Pursuing' },
+  { year: '2019',    degree: 'Class X — Secondary',                  school: 'Agra Public School, Agra',               pct: '80.6%' },
+  { year: '2021',    degree: 'Class XII — Senior Secondary',         school: 'Agra Public School, Agra',               pct: '82.4%' },
+  { year: '2025',    degree: 'B.Tech — Computer Science Engineering', school: 'Dr. Ram Manohar Lohia Avadh University', pct: '79.8%' },
+  { year: 'Ongoing', degree: 'CITS — Computer Software Application',  school: 'National Skill Training Institute',       pct: 'Pursuing' },
 ];
 
 export const SKILLS = [
   { cat: 'Frontend',       tags: ['HTML', 'CSS', 'Tailwind CSS', 'ShadCN', 'JavaScript', 'TypeScript', 'React.js'] },
   { cat: 'Backend',        tags: ['Node.js', 'Next.js', 'WebSocket'] },
-  { cat: 'Tools & DevOps', tags: ['VS Code', 'Docker', 'Git', 'GitHub','Prisma'] },
-  {cat: 'Database', tags: ['MongoDB', 'MySQL', 'PostgreSQL',]},
+  { cat: 'Tools & DevOps', tags: ['VS Code', 'Docker', 'Git', 'GitHub', 'Prisma'] },
+  { cat: 'Database',       tags: ['MongoDB', 'MySQL', 'PostgreSQL'] },
 ];
 
 export const ACTIVITIES = [
@@ -86,6 +103,13 @@ export const ACTIVITIES = [
     org: 'Algozenith',
     desc: 'Led the Competitive Programming community — organizing contests, mentoring members, and fostering algorithmic thinking.',
   },
+];
+
+export const CERTIFICATIONS = [
+  { name: 'Object-Oriented Programming', issuer: 'takeUforward' },
+  { name: 'Web Development Cohort 3', issuer: '100xDevs' },
+  { name: 'NASSCOM Python Excellence Certificate', issuer: 'Coding Ninjas' },
+  { name: 'DSA Supreme Batch', issuer: 'CodeHelp' },
 ];
 
 export const CONTACT_INFO = [
