@@ -20,7 +20,6 @@ function ProjectCard({ project }) {
         transition: "all 0.3s",
       }}
     >
-      {/* top glow */}
       <div
         style={{
           position: "absolute",
@@ -28,14 +27,12 @@ function ProjectCard({ project }) {
           left: 0,
           right: 0,
           height: "2px",
-          background:
-            "linear-gradient(90deg, transparent, var(--cyan), transparent)",
+          background: "linear-gradient(90deg, transparent, var(--cyan), transparent)",
           opacity: hovered ? 1 : 0,
           transition: "opacity 0.3s",
         }}
       />
 
-      {/* Header */}
       <div style={{ padding: "1.5rem 1.5rem 0" }}>
         <div
           style={{
@@ -43,6 +40,8 @@ function ProjectCard({ project }) {
             justifyContent: "space-between",
             alignItems: "center",
             marginBottom: "1rem",
+            gap: "0.75rem",
+            flexWrap: "wrap",
           }}
         >
           <span
@@ -55,41 +54,46 @@ function ProjectCard({ project }) {
           >
             {project.num}
           </span>
-          {project.live && (
-            <span
-              style={{
-                fontFamily: "'Space Mono', monospace",
-                fontSize: "0.65rem",
-                letterSpacing: "2px",
-                color: "var(--cyan)",
-                border: "1px solid var(--border2)",
-                padding: "0.2rem 0.6rem",
-                display: "flex",
-                alignItems: "center",
-                gap: "0.4rem",
-              }}
-            >
+
+          <div style={{ display: "flex", gap: "0.5rem", flexWrap: "wrap" }}>
+            {project.live && project.liveLink && (
               <a
                 href={project.liveLink}
                 target="_blank"
                 rel="noopener noreferrer"
-                style={{ color: "inherit", textDecoration: "none" }}
+                style={{
+                  fontFamily: "'Space Mono', monospace",
+                  fontSize: "0.65rem",
+                  letterSpacing: "1.5px",
+                  color: "var(--cyan)",
+                  border: "1px solid var(--border2)",
+                  padding: "0.25rem 0.6rem",
+                  textDecoration: "none",
+                }}
               >
-                {" "}
-                <span
-                  style={{
-                    width: "6px",
-                    height: "6px",
-                    borderRadius: "50%",
-                    background: "var(--cyan)",
-                    animation: "pulse 1.5s infinite",
-                    cursor: "pointer",
-                  }}
-                />
-                LIVE
+                LIVE ↗
               </a>
-            </span>
-          )}
+            )}
+
+            {project.githubLink && (
+              <a
+                href={project.githubLink}
+                target="_blank"
+                rel="noopener noreferrer"
+                style={{
+                  fontFamily: "'Space Mono', monospace",
+                  fontSize: "0.65rem",
+                  letterSpacing: "1.5px",
+                  color: "var(--muted)",
+                  border: "1px solid var(--border)",
+                  padding: "0.25rem 0.6rem",
+                  textDecoration: "none",
+                }}
+              >
+                GITHUB ↗
+              </a>
+            )}
+          </div>
         </div>
 
         <div
@@ -102,15 +106,10 @@ function ProjectCard({ project }) {
             marginBottom: "0.5rem",
           }}
         >
-          <h3
-            style={{
-              fontSize: "1.4rem",
-              fontWeight: 800,
-              letterSpacing: "-0.5px",
-            }}
-          >
+          <h3 style={{ fontSize: "1.4rem", fontWeight: 800, letterSpacing: "-0.5px" }}>
             {project.name}
           </h3>
+
           <span
             style={{
               fontFamily: "'Space Mono', monospace",
@@ -139,7 +138,6 @@ function ProjectCard({ project }) {
         </p>
       </div>
 
-      {/* Body */}
       <div style={{ padding: "0 1.5rem 1.5rem" }}>
         <div style={{ marginBottom: "1rem" }}>
           {project.highlights.map((h, j) => (
@@ -152,31 +150,17 @@ function ProjectCard({ project }) {
                 marginBottom: "0.4rem",
               }}
             >
-              <span
-                style={{
-                  color: "var(--cyan)",
-                  flexShrink: 0,
-                  marginTop: "0.1rem",
-                }}
-              >
+              <span style={{ color: "var(--cyan)", flexShrink: 0, marginTop: "0.1rem" }}>
                 ▸
               </span>
-              <span
-                style={{
-                  fontSize: "0.82rem",
-                  color: "var(--text)",
-                  lineHeight: 1.65,
-                }}
-              >
+              <span style={{ fontSize: "0.82rem", color: "var(--text)", lineHeight: 1.65 }}>
                 {h}
               </span>
             </div>
           ))}
         </div>
 
-        <div
-          style={{ borderTop: "1px solid var(--border)", paddingTop: "1rem" }}
-        >
+        <div style={{ borderTop: "1px solid var(--border)", paddingTop: "1rem" }}>
           <div
             style={{
               fontFamily: "'Space Mono', monospace",
