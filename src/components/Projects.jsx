@@ -1,181 +1,57 @@
 import React from "react";
 import { Section, SectionHeader, TagRow } from "./UI";
-import { PROJECTS } from "../data";
+import { PROJECT_CATEGORIES } from "../data";
 
-function ProjectCard({ project }) {
+function ProjectCard({ project, index }) {
   const [hovered, setHovered] = React.useState(false);
 
   return (
-    <div
+    <article
+      className="project-card"
+      style={{ animationDelay: `${index * 80}ms` }}
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
-      style={{
-        background: "var(--bg2)",
-        border: `1px solid ${hovered ? "var(--border2)" : "var(--border)"}`,
-        borderRadius: "2px",
-        overflow: "hidden",
-        position: "relative",
-        transform: hovered ? "translateY(-5px)" : "translateY(0)",
-        boxShadow: hovered ? "0 24px 48px rgba(0,0,0,0.5)" : "none",
-        transition: "all 0.3s",
-      }}
     >
-      <div
-        style={{
-          position: "absolute",
-          top: 0,
-          left: 0,
-          right: 0,
-          height: "2px",
-          background: "linear-gradient(90deg, transparent, var(--cyan), transparent)",
-          opacity: hovered ? 1 : 0,
-          transition: "opacity 0.3s",
-        }}
-      />
+      <div className="project-card-glow" style={{ opacity: hovered ? 1 : 0 }} />
 
-      <div style={{ padding: "1.5rem 1.5rem 0" }}>
-        <div
-          style={{
-            display: "flex",
-            justifyContent: "space-between",
-            alignItems: "center",
-            marginBottom: "1rem",
-            gap: "0.75rem",
-            flexWrap: "wrap",
-          }}
-        >
-          <span
-            style={{
-              fontFamily: "'Space Mono', monospace",
-              color: "var(--muted)",
-              fontSize: "0.7rem",
-              letterSpacing: "2px",
-            }}
-          >
-            {project.num}
-          </span>
+      <div className="project-card-top">
+        <span className="project-number">{project.num}</span>
 
-          <div style={{ display: "flex", gap: "0.5rem", flexWrap: "wrap" }}>
-            {project.live && project.liveLink && (
-              <a
-                href={project.liveLink}
-                target="_blank"
-                rel="noopener noreferrer"
-                style={{
-                  fontFamily: "'Space Mono', monospace",
-                  fontSize: "0.65rem",
-                  letterSpacing: "1.5px",
-                  color: "var(--cyan)",
-                  border: "1px solid var(--border2)",
-                  padding: "0.25rem 0.6rem",
-                  textDecoration: "none",
-                }}
-              >
-                LIVE ↗
-              </a>
-            )}
-
-            {project.githubLink && (
-              <a
-                href={project.githubLink}
-                target="_blank"
-                rel="noopener noreferrer"
-                style={{
-                  fontFamily: "'Space Mono', monospace",
-                  fontSize: "0.65rem",
-                  letterSpacing: "1.5px",
-                  color: "var(--muted)",
-                  border: "1px solid var(--border)",
-                  padding: "0.25rem 0.6rem",
-                  textDecoration: "none",
-                }}
-              >
-                GITHUB ↗
-              </a>
-            )}
-          </div>
-        </div>
-
-        <div
-          style={{
-            display: "flex",
-            alignItems: "baseline",
-            justifyContent: "space-between",
-            flexWrap: "wrap",
-            gap: "0.5rem",
-            marginBottom: "0.5rem",
-          }}
-        >
-          <h3 style={{ fontSize: "1.4rem", fontWeight: 800, letterSpacing: "-0.5px" }}>
-            {project.name}
-          </h3>
-
-          <span
-            style={{
-              fontFamily: "'Space Mono', monospace",
-              fontSize: "0.65rem",
-              color: "var(--muted)",
-              letterSpacing: "1px",
-              border: "1px solid var(--border)",
-              padding: "0.15rem 0.5rem",
-            }}
-          >
-            ▲ {project.deploy}
-          </span>
-        </div>
-
-        <p
-          style={{
-            color: "var(--cyan)",
-            fontFamily: "'Space Mono', monospace",
-            fontSize: "0.72rem",
-            letterSpacing: "2px",
-            marginBottom: "1rem",
-            opacity: 0.8,
-          }}
-        >
-          {project.tagline}
-        </p>
-      </div>
-
-      <div style={{ padding: "0 1.5rem 1.5rem" }}>
-        <div style={{ marginBottom: "1rem" }}>
-          {project.highlights.map((h, j) => (
-            <div
-              key={j}
-              style={{
-                display: "flex",
-                alignItems: "flex-start",
-                gap: "0.5rem",
-                marginBottom: "0.4rem",
-              }}
-            >
-              <span style={{ color: "var(--cyan)", flexShrink: 0, marginTop: "0.1rem" }}>
-                ▸
-              </span>
-              <span style={{ fontSize: "0.82rem", color: "var(--text)", lineHeight: 1.65 }}>
-                {h}
-              </span>
-            </div>
-          ))}
-        </div>
-
-        <div style={{ borderTop: "1px solid var(--border)", paddingTop: "1rem" }}>
-          <div
-            style={{
-              fontFamily: "'Space Mono', monospace",
-              fontSize: "0.62rem",
-              letterSpacing: "3px",
-              color: "var(--muted)",
-              marginBottom: "0.6rem",
-            }}
-          >
-            TECH STACK
-          </div>
-          <TagRow tags={project.stack} />
+        <div className="project-links">
+          {project.live && project.liveLink && (
+            <a className="project-link project-link-live" href={project.liveLink} target="_blank" rel="noopener noreferrer">
+              LIVE ↗
+            </a>
+          )}
+          {project.githubLink && (
+            <a className="project-link" href={project.githubLink} target="_blank" rel="noopener noreferrer">
+              GITHUB ↗
+            </a>
+          )}
         </div>
       </div>
-    </div>
+
+      <div className="project-title-row">
+        <h3>{project.name}</h3>
+        <span className="project-deploy">▲ {project.deploy}</span>
+      </div>
+
+      <p className="project-tagline">{project.tagline}</p>
+
+      <div className="project-highlights">
+        {project.highlights.map((highlight, j) => (
+          <div className="project-highlight" key={j}>
+            <span>▸</span>
+            <span>{highlight}</span>
+          </div>
+        ))}
+      </div>
+
+      <div className="project-stack">
+        <div className="project-stack-label">TECH STACK</div>
+        <TagRow tags={project.stack} />
+      </div>
+    </article>
   );
 }
 
@@ -183,15 +59,24 @@ export default function Projects() {
   return (
     <Section id="projects">
       <SectionHeader num="03 / WORK" title="Projects" />
-      <div
-        style={{
-          display: "grid",
-          gridTemplateColumns: "repeat(auto-fit, minmax(320px, 1fr))",
-          gap: "1.5rem",
-        }}
-      >
-        {PROJECTS.map((p, i) => (
-          <ProjectCard key={i} project={p} />
+
+      <div className="project-categories">
+        {PROJECT_CATEGORIES.map((category) => (
+          <div className="project-category" key={category.key}>
+            <div className="project-category-heading">
+              <div>
+                <span className="project-category-code">{category.code}</span>
+                <h3>{category.label}</h3>
+              </div>
+              <span className="project-count">{String(category.projects.length).padStart(2, "0")} PROJECTS</span>
+            </div>
+
+            <div className="projects-grid">
+              {category.projects.map((project, index) => (
+                <ProjectCard key={`${category.key}-${project.name}`} project={project} index={index} />
+              ))}
+            </div>
+          </div>
         ))}
       </div>
     </Section>
