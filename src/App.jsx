@@ -11,6 +11,45 @@ import Certifications from './components/Certifications';
 import Contact     from './components/Contact';
 import Footer      from './components/Footer';
 
+function ThreeDScene() {
+  const [nodes, setNodes] = React.useState([]);
+  React.useEffect(() => {
+    const makeNodes = () => Array.from({ length: 24 }, (_, i) => ({
+      left: (i * 37) % 100,
+      top: (i * 61) % 100,
+      size: 3 + (i % 4),
+      delay: (i % 8) * -0.7,
+      duration: 8 + (i % 6),
+    }));
+    setNodes(makeNodes());
+  }, []);
+
+  return (
+    <div className="scene-3d" aria-hidden="true">
+      <div className="scene-orbit scene-orbit-one" />
+      <div className="scene-orbit scene-orbit-two" />
+      <div className="scene-cube">
+        <span /><span /><span /><span /><span /><span />
+      </div>
+      <div className="scene-core" />
+      {nodes.map((node, i) => (
+        <span
+          key={i}
+          className="scene-node"
+          style={{
+            left: `${node.left}%`,
+            top: `${node.top}%`,
+            width: node.size,
+            height: node.size,
+            animationDelay: `${node.delay}s`,
+            animationDuration: `${node.duration}s`,
+          }}
+        />
+      ))}
+    </div>
+  );
+}
+
 function GridBg() {
   return (
     <div style={{
@@ -87,6 +126,7 @@ export default function App() {
 
   return (
     <>
+      <ThreeDScene />
       <GridBg />
       <CursorGlow x={cursor.x} y={cursor.y} />
       <Navbar active={activeSection} scrollTo={scrollTo} />
