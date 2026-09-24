@@ -711,3 +711,5 @@ body {
 @media(max-width:800px){.project-feature{grid-template-columns:1fr}.project-feature-visual{min-height:220px}.project-feature::after{font-size:8px}}
 @media(max-width:600px){.portfolio-section{padding:4rem 1.25rem}.section-header h2{font-size:2rem}.section-header::after{font-size:7px;letter-spacing:2px}.project-feature{padding:1.25rem}.project-feature-screen{width:88%}}
 @media(prefers-reduced-motion:reduce){.portfolio-section{opacity:1;transform:none;transition:none}.skill-card:hover .skill-orbit{animation:none}.card-shine{display:none}}
+
+@media(max-width:800px){.contact-layout{grid-template-columns:1fr!important}}
