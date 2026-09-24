@@ -72,8 +72,8 @@ export const EXPERIENCE = [
 export const QUALIFICATIONS = [
   { year: '2019',    degree: 'Class X — Secondary',                  school: 'Agra Public School, Agra',               pct: '80.6%' },
   { year: '2021',    degree: 'Class XII — Senior Secondary',         school: 'Agra Public School, Agra',               pct: '82.4%' },
-  { year: '2025',    degree: 'B.Tech — Computer Science Engineering', school: 'Dr. Ram Manohar Lohia Avadh University', pct: '79.8%' },
-  { year: '2026', degree: 'CITS — Computer Software Application', school: 'National Skill Training Institute', pct: '94.6%' },
+  { year: '2025',    degree: 'B.Tech — Computer Science Engineering', school: 'Dr. Ram Manohar Lohia Avadh University, Ayodhya', pct: '79.8%' },
+  { year: '2026', degree: 'CITS — Computer Software Application', school: 'National Skill Training Institute, Kanpur', pct: '94.6%' },
 ];
 
 export const SKILLS = [
