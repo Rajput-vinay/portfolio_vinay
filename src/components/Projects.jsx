@@ -38,9 +38,24 @@ function FeaturedCampusSync() {
       </div>
       <p className="project-tagline">{project.tagline}</p>
       <div className="project-feature-body">
-        <div className="project-feature-visual" aria-hidden="true">
-          <div className="project-feature-screen">
-            <div className="project-feature-lines"><span/><span/><span/><span/></div>
+        <div className="project-feature-visual project-live-preview">
+          <div className="project-browser">
+            <div className="project-browser-bar">
+              <span className="browser-dots"><i/><i/><i/></span>
+              <span className="browser-address">campus-sync-phi.vercel.app</span>
+              <span className="browser-live">LIVE</span>
+            </div>
+            <div className="project-iframe-wrap">
+              <iframe
+                title="CampusSync live preview"
+                src={project.liveLink}
+                loading="lazy"
+                allow="clipboard-read; clipboard-write"
+              />
+              <div className="iframe-overlay">
+                <a href={project.liveLink} target="_blank" rel="noopener noreferrer">OPEN FULL SITE ↗</a>
+              </div>
+            </div>
           </div>
         </div>
         <div className="project-highlights">
