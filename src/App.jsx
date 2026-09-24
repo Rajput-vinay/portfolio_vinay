@@ -9,6 +9,8 @@ import Experience from './components/Experience';
 import Activities from './components/Activities';
 import Certifications from './components/Certifications';
 import Contact from './components/Contact';
+import CaseStudy from './components/CaseStudy';
+import GitHubActivity from './components/GitHubActivity';
 import Footer from './components/Footer';
 
 function ThreeDScene() {
@@ -39,7 +41,7 @@ export default function App(){
   const showToast=useCallback(msg=>{setToast(msg);setTimeout(()=>setToast(''),2500)},[]);
   return <>
     <ThreeDScene/><GridBg/><CursorGlow x={cursor.x} y={cursor.y}/><Navbar active={activeSection} scrollTo={scrollTo}/>
-    <main><Hero scrollTo={scrollTo}/><Qualification/><Skills/><Projects/><Experience/><Activities/><Certifications/><Contact showToast={showToast}/></main>
+    <main><Hero scrollTo={scrollTo}/><Qualification/><Skills/><CaseStudy/><Projects/><Experience/><Activities/><Certifications/><GitHubActivity/><Contact showToast={showToast}/></main>
     <Footer/><Toast message={toast}/>
   </>;
 }
