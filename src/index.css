@@ -860,3 +860,74 @@ a,button,input,textarea{cursor:pointer}
 .github-graph-footer{display:flex;justify-content:space-between;gap:1rem;align-items:center}
 .github-graph-footer a{font:9px 'Space Mono',monospace;color:var(--cyan);text-decoration:none;letter-spacing:1px}
 @media(max-width:600px){.github-real-heatmap{grid-template-columns:repeat(52,1fr);gap:1px}.github-graph-footer{align-items:flex-start;flex-direction:column}}
+
+/* ── Mobile responsiveness pass ── */
+.site-nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:.8rem 3rem;background:rgba(5,10,15,.88);backdrop-filter:blur(14px);border-bottom:1px solid var(--border)}
+.nav-inner{max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:space-between}
+.nav-logo{appearance:none;background:none;border:0;color:var(--cyan);font:700 1.05rem 'Space Mono',monospace;letter-spacing:2px;padding:0}
+.nav-links{display:flex;align-items:center;gap:1.25rem}
+.nav-links a{color:var(--muted);text-decoration:none;font:10px 'Space Mono',monospace;letter-spacing:1.5px;text-transform:uppercase;transition:.2s}
+.nav-links a:hover,.nav-links a.active{color:var(--cyan)}
+.nav-menu-toggle{display:none;background:none;border:1px solid var(--border2);padding:.55rem;width:42px;height:38px}
+.nav-menu-toggle span{display:block;width:18px;height:1px;background:var(--cyan);margin:4px auto;transition:.2s}
+@media(max-width:950px){
+.site-nav{padding:.75rem 1.25rem}
+.nav-links{gap:.7rem}
+.nav-links a{font-size:8px}
+}
+@media(max-width:700px){
+.site-nav{padding:.75rem 1rem}
+.nav-menu-toggle{display:block}
+.nav-links{position:absolute;left:1rem;right:1rem;top:calc(100% + .5rem);display:flex;flex-direction:column;align-items:stretch;gap:0;padding:.45rem;background:rgba(5,10,15,.97);border:1px solid var(--border2);box-shadow:0 20px 45px rgba(0,0,0,.45);opacity:0;visibility:hidden;transform:translateY(-8px);transition:.22s ease}
+.nav-links.is-open{opacity:1;visibility:visible;transform:translateY(0)}
+.nav-links a{padding:.8rem .75rem;border-bottom:1px solid var(--border);font-size:9px}
+.nav-links a:last-child{border-bottom:0}
+}
+@media(max-width:600px){
+.portfolio-section{padding:4rem 1rem}
+.section-header{margin-bottom:2rem!important}
+.section-header h2{font-size:2rem!important}
+.hero-content{width:100%}
+.hero-name{font-size:clamp(3rem,16vw,4.5rem);letter-spacing:-2.5px}
+.hero-photo-wrap{margin-bottom:1.5rem}
+.hero-stats{display:grid;grid-template-columns:repeat(2,1fr);gap:.8rem;margin-top:1.5rem}
+.hero-stats span{font-size:8px}
+.hero-stats b{font-size:.95rem}
+.projects-grid,.skills-grid{grid-template-columns:1fr!important}
+.project-card{padding:1rem}
+.project-card-featured{padding:1rem}
+.project-card-featured .project-card-top{align-items:flex-start}
+.project-feature-body{grid-template-columns:1fr!important;gap:1rem}
+.project-live-preview,.project-browser{min-height:200px}
+.project-iframe-wrap,.project-iframe-wrap iframe{min-height:170px}
+.project-title-row h3{font-size:1.15rem}
+.project-links{width:100%}
+.project-link{font-size:8px}
+.project-tagline{font-size:8px;line-height:1.5}
+.project-highlight{font-size:.75rem}
+.project-stack{padding-top:.8rem}
+.github-panel{padding:1rem}
+.github-header{align-items:flex-start;flex-direction:column}
+.github-header h3{font-size:1rem}
+.github-profile-link{font-size:8px}
+.github-stats{grid-template-columns:repeat(2,1fr)}
+.github-stat{padding:.75rem}
+.github-stat strong{font-size:1rem}
+.github-repo-grid{grid-template-columns:1fr}
+.github-real-heatmap{height:72px;overflow:hidden}
+.github-graph-footer{gap:.65rem}
+.contact-layout{grid-template-columns:1fr!important;gap:1.25rem!important}
+.terminal-card{padding:1rem!important}
+.case-study-shell{padding:1rem}
+.case-study-top h3{font-size:1.4rem}
+}
+@media(max-width:380px){
+.portfolio-section{padding-left:.75rem;padding-right:.75rem}
+.hero-name{font-size:2.7rem}
+.hero-stats{grid-template-columns:1fr 1fr}
+.project-card-top,.project-title-row{align-items:flex-start}
+.project-deploy{font-size:8px}
+}
+@media(prefers-reduced-motion:reduce){
+.nav-links,.nav-menu-toggle span{transition:none}
+}
