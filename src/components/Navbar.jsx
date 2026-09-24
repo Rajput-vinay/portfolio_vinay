@@ -18,7 +18,7 @@ const styles = {
 export default function Navbar({ active, scrollTo }) {
   return (
     <nav style={styles.nav}>
-      <div style={styles.logo}>VR.dev</div>
+      <div style={styles.logo}><span className="nav-logo-dot"/>VR.dev</div>
       <div style={styles.links}>
         {NAV_ITEMS.map(id => (
           <a
