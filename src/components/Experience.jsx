@@ -9,27 +9,14 @@ export default function Experience() {
 
       <div style={{ display: 'flex', flexDirection: 'column' }}>
         {EXPERIENCE.map((e, i) => (
-          <div
-            key={i}
-            style={{
-              display: 'grid',
-              gridTemplateColumns: '130px 20px 1fr',
-              gap: '0 1rem',
-              alignItems: 'start',
-              marginBottom: '1.5rem',
-            }}
-          >
+          <div key={i} className="experience-row">
             {/* Date */}
-            <div style={{
-              fontFamily: "'Space Mono', monospace", color: 'var(--cyan)',
-              fontSize: '0.65rem', letterSpacing: '1px', lineHeight: 1.6,
-              paddingTop: '0.3rem', textAlign: 'right',
-            }}>
+            <div className="experience-year">
               {e.period}
             </div>
 
             {/* Dot + line */}
-            <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', paddingTop: '0.35rem' }}>
+            <div className="experience-connector">
               <div style={{
                 width: '12px', height: '12px', border: '2px solid var(--cyan)',
                 borderRadius: '50%', background: 'var(--bg)', flexShrink: 0, position: 'relative',
