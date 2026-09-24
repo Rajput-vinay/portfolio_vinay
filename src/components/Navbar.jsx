@@ -1,41 +1,19 @@
-import React from 'react';
+import React,{useState} from 'react';
 import { NAV_ITEMS } from '../data';
 
-const styles = {
-  nav: {
-    position: 'fixed', top: 0, left: 0, right: 0, zIndex: 100,
-    padding: '1rem 3rem', display: 'flex', justifyContent: 'space-between', alignItems: 'center',
-    background: 'rgba(5,10,15,0.9)', backdropFilter: 'blur(12px)',
-    borderBottom: '1px solid var(--border)',
-  },
-  logo: {
-    fontFamily: "'Space Mono', monospace", color: 'var(--cyan)',
-    fontSize: '1.1rem', letterSpacing: '2px', fontWeight: 700,
-  },
-  links: { display: 'flex', gap: '1.5rem', flexWrap: 'wrap' },
-};
+const labels={about:'about',qualification:'education',skills:'skills',projects:'projects',experience:'experience',activities:'activities',certifications:'certs',github:'github',contact:'contact'};
 
-export default function Navbar({ active, scrollTo }) {
-  return (
-    <nav style={styles.nav}>
-      <div style={styles.logo}><span className="nav-logo-dot"/>VR.dev</div>
-      <div style={styles.links}>
-        {NAV_ITEMS.map(id => (
-          <a
-            key={id}
-            href={`#${id}`}
-            onClick={e => { e.preventDefault(); scrollTo(id); }}
-            style={{
-              color: active === id ? 'var(--cyan)' : 'var(--muted)',
-              textDecoration: 'none', fontSize: '0.72rem',
-              letterSpacing: '2px', textTransform: 'uppercase',
-              transition: 'color 0.3s', fontFamily: "'Space Mono', monospace",
-            }}
-          >
-            {id}
-          </a>
-        ))}
+export default function Navbar({active,scrollTo}){
+  const [open,setOpen]=useState(false);
+  return <nav className="site-nav">
+    <div className="nav-inner">
+      <button className="nav-logo" onClick={()=>scrollTo('about')}><span className="nav-logo-dot"/>VR.dev</button>
+      <button className={`nav-menu-toggle ${open?'is-open':''}`} aria-label="Toggle navigation" aria-expanded={open} onClick={()=>setOpen(v=>!v)}>
+        <span/><span/><span/>
+      </button>
+      <div className={`nav-links ${open?'is-open':''}`}>
+        {NAV_ITEMS.map(id=><a key={id} className={active===id?'active':''} href={`#${id}`} onClick={e=>{e.preventDefault();scrollTo(id);setOpen(false)}}>{labels[id]||id}</a>)}
       </div>
-    </nav>
-  );
+    </div>
+  </nav>;
 }
