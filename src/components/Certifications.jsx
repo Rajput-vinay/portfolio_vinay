@@ -7,15 +7,15 @@ export default function Certifications() {
     <Section id="certifications">
       <SectionHeader num="07 / CERTIFICATIONS" title="Certifications" />
 
-      <div
-        style={{
+      <div className="cert-grid" style={{
           display: 'grid',
           gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
           gap: '1rem',
         }}
       >
         {CERTIFICATIONS.map((cert, i) => (
-          <Card key={i}>
+          <Card key={i} style={{minHeight:'190px'}}> 
+            <div className="cert-seal">✓</div>
             <div
               style={{
                 fontFamily: "'Space Mono', monospace",
