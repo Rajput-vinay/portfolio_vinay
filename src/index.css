@@ -986,3 +986,27 @@ a,button,input,textarea{cursor:pointer}
   .experience-card-head{display:flex;flex-direction:column;gap:.6rem}
   .experience-period{order:-1;text-align:left}
 }
+
+/* ── Final mobile width / overflow hardening ── */
+html,body,#root,main{width:100%;min-width:0;max-width:100%}
+main{overflow-x:clip}
+.portfolio-section{width:100%;min-width:0}
+.portfolio-section *{min-width:0}
+img,iframe{max-width:100%}
+h1,h2,h3,h4,p,span,a,button{overflow-wrap:anywhere}
+@media(max-width:600px){
+  .portfolio-section{width:100%;max-width:100%;padding:4.5rem 1rem 3.5rem}
+  .hero-section,.hero-content{min-width:0;max-width:100%}
+  .project-card,.project-card-featured,.github-panel,.terminal-card,.experience-item{width:100%;max-width:100%;min-width:0}
+  .project-card-top,.project-title-row{min-width:0}
+  .project-title-row h3{min-width:0;overflow-wrap:anywhere}
+  .project-links{max-width:100%}
+  .project-link{white-space:normal;overflow-wrap:anywhere}
+  .project-stack .tag-row{max-width:100%}
+}
+@media(max-width:380px){
+  .portfolio-section{padding-left:.65rem;padding-right:.65rem}
+  .section-header h2{font-size:1.7rem!important}
+  .hero-name{font-size:clamp(2.4rem,15vw,3.2rem)!important}
+  .project-card,.project-card-featured{padding:.8rem}
+}
