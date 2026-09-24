@@ -68,18 +68,17 @@ export default function Hero({ scrollTo }) {
           AVAILABLE FOR OPPORTUNITIES
         </div>
 
-        <h1 style={{
-          fontSize: 'clamp(3rem, 8vw, 7rem)', fontWeight: 800,
-          lineHeight: 1, letterSpacing: '-2px',
-          opacity: 0, animation: 'fadeUp 0.6s 0.4s forwards',
-        }}>
-          Vinay{' '}
-          <span style={{ color: 'var(--cyan)', position: 'relative' }}>
-            Rajput
-            <span style={{
-              position: 'absolute', bottom: '4px', left: 0, right: 0,
-              height: '3px', background: 'var(--cyan)', opacity: 0.4,
-            }} />
+        <h1 className="hero-name" aria-label="Vinay Rajput">
+          <span className="hero-name-line">
+            {'Vinay'.split('').map((char, i) => (
+              <span className="hero-letter hero-letter-light" key={`v-${i}`} style={{ animationDelay: `${0.45 + i * 0.06}s` }}>{char}</span>
+            ))}
+          </span>
+          <span className="hero-name-line hero-name-accent">
+            {'Rajput'.split('').map((char, i) => (
+              <span className="hero-letter" key={`r-${i}`} style={{ animationDelay: `${0.8 + i * 0.06}s` }}>{char}</span>
+            ))}
+            <span className="hero-name-scan" />
           </span>
         </h1>
 
