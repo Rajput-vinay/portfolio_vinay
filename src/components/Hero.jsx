@@ -54,6 +54,8 @@ export default function Hero({ scrollTo }) {
         />
       </div>
 
+      <div className="hero-hud" aria-hidden="true"><span>SYS / ONLINE</span><span>STACK / MERN + AI</span><span>MODE / BUILD</span></div>
+
       <div className="hero-content">
         <div style={{
           fontFamily: "'Space Mono', monospace", color: 'var(--cyan)',
@@ -89,6 +91,8 @@ export default function Hero({ scrollTo }) {
         }}>
           // Software Developer · Agra, India
         </p>
+
+        <div className="hero-stats"><span><b>06+</b> FULL STACK BUILDS</span><span><b>400+</b> DSA PROBLEMS</span><span><b>94.6%</b> CITS</span></div>
 
         <p style={{
           maxWidth: '520px', marginTop: '1.5rem', color: 'var(--muted)',
