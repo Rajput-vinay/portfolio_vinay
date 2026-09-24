@@ -760,3 +760,75 @@ body {
 .project-live-preview:hover .iframe-overlay{opacity:1}
 .iframe-overlay a{pointer-events:auto;color:var(--cyan);border:1px solid var(--border2);background:rgba(3,8,12,.92);padding:.45rem .65rem;font:8px 'Space Mono',monospace;text-decoration:none;letter-spacing:1px}
 @media(max-width:700px){.project-live-preview{min-height:220px}.project-browser{min-height:220px}.project-iframe-wrap{min-height:190px}.project-iframe-wrap iframe{min-height:190px}}
+
+
+/* ── CampusSync case study ── */
+.case-study-shell{position:relative;border:1px solid var(--border);background:linear-gradient(145deg,rgba(0,229,255,.055),transparent 45%),var(--bg2);padding:2rem;overflow:hidden}
+.case-study-shell::after{content:"CAMPUS / SYNC";position:absolute;right:-1rem;bottom:-2rem;font:900 clamp(4rem,12vw,9rem)/1 'Syne',sans-serif;color:rgba(0,229,255,.025);pointer-events:none}
+.case-study-top{display:flex;justify-content:space-between;gap:2rem;align-items:flex-start;border-bottom:1px solid var(--border);padding-bottom:1.5rem}
+.case-study-label,.case-study-code span{font:10px 'Space Mono',monospace;letter-spacing:3px;color:var(--cyan)}
+.case-study-top h3{font-size:clamp(1.5rem,3vw,2.5rem);max-width:650px;margin-top:.5rem}
+.case-study-live,.case-study-code a{color:var(--cyan);font:11px 'Space Mono',monospace;letter-spacing:1.5px;text-decoration:none;border:1px solid var(--border2);padding:.65rem .8rem;white-space:nowrap}
+.case-study-live:hover{background:var(--cyan3);transform:translateY(-2px)}
+.case-study-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--border);margin:1.5rem 0}
+.case-study-step{background:var(--bg2);padding:1.25rem;min-height:180px;transition:transform .3s,background .3s}
+.case-study-step:hover{transform:translateY(-6px);background:var(--bg3)}
+.case-study-step>span{font:10px 'Space Mono',monospace;color:var(--cyan)}
+.case-study-step h4{margin:1.4rem 0 .45rem;font-size:1.05rem}
+.case-study-step p{color:var(--muted);font-size:.78rem;line-height:1.7}
+.case-study-bottom{display:grid;grid-template-columns:1fr 240px;gap:2rem;border-top:1px solid var(--border);padding-top:1.25rem}
+.case-study-code{display:grid;gap:.45rem;align-content:start}
+.case-study-code strong{font:700 1.1rem 'Space Mono',monospace;color:var(--text)}
+.case-study-code a{font-size:9px;padding:0;border:0;word-break:break-all}
+
+/* ── GitHub activity ── */
+.github-panel{border:1px solid var(--border);background:var(--bg2);padding:1.5rem;position:relative;overflow:hidden}
+.github-panel::before{content:"";position:absolute;inset:0;background:linear-gradient(115deg,transparent 20%,rgba(0,229,255,.06) 48%,transparent 70%);transform:translateX(-100%);animation:githubSweep 7s ease-in-out infinite}
+.github-header{position:relative;display:flex;justify-content:space-between;align-items:flex-end;gap:1rem;border-bottom:1px solid var(--border);padding-bottom:1.25rem}
+.github-kicker{font:9px 'Space Mono',monospace;letter-spacing:3px;color:var(--cyan)}
+.github-header h3{font-size:1.25rem;margin-top:.5rem}
+.github-profile-link{font:10px 'Space Mono',monospace;color:var(--cyan);text-decoration:none;border:1px solid var(--border2);padding:.6rem .75rem}
+.github-stats{position:relative;display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--border);margin:1.25rem 0}
+.github-stat{background:var(--bg2);padding:1rem;display:flex;flex-direction:column;gap:.3rem}
+.github-stat span,.github-graph-title{font:9px 'Space Mono',monospace;color:var(--muted);letter-spacing:2px}
+.github-stat strong{font:1.35rem 'Space Mono',monospace;color:var(--cyan)}
+.github-repo-grid{position:relative;display:grid;grid-template-columns:repeat(2,1fr);gap:.7rem}
+.github-repo{display:grid;grid-template-columns:32px 1fr auto;grid-template-rows:auto auto;gap:.15rem .6rem;padding:.9rem;border:1px solid var(--border);text-decoration:none;color:var(--text);transition:.25s}
+.github-repo:hover{border-color:var(--border2);transform:translateY(-3px);background:var(--cyan3)}
+.github-repo-num{font:9px 'Space Mono',monospace;color:var(--cyan);grid-row:1/3}
+.github-repo-name{font-weight:700;font-size:.85rem}
+.github-repo-meta{font:9px 'Space Mono',monospace;color:var(--muted)}
+.github-arrow{grid-column:3;grid-row:1/3;color:var(--cyan)}
+.github-graph{position:relative;margin-top:1.25rem;border-top:1px solid var(--border);padding-top:1rem}
+.github-heatmap{display:grid;grid-template-columns:repeat(28,1fr);gap:4px;margin:.8rem 0}
+.github-heatmap span{aspect-ratio:1;background:rgba(0,229,255,calc(var(--level) * .035 + .015));border:1px solid rgba(0,229,255,.05);transition:.2s}
+.github-heatmap span:hover{background:var(--cyan);box-shadow:0 0 10px var(--cyan)}
+.github-graph small{font:9px 'Space Mono',monospace;color:var(--muted)}
+@keyframes githubSweep{0%,65%{transform:translateX(-110%)}100%{transform:translateX(110%)}}
+
+/* ── Experience / certification depth ── */
+.tilt-card{transform-style:preserve-3d}
+.tilt-card::after{content:"";position:absolute;inset:auto 0 0;height:1px;background:linear-gradient(90deg,transparent,var(--cyan),transparent);opacity:.35}
+.terminal-card{box-shadow:0 20px 60px rgba(0,0,0,.22)}
+
+/* ── Interactive custom cursor ── */
+@media (pointer:fine){
+body{cursor:crosshair}
+a,button,input,textarea{cursor:pointer}
+}
+@media (max-width:900px){
+.case-study-grid{grid-template-columns:repeat(2,1fr)}
+.case-study-bottom{grid-template-columns:1fr}
+.github-repo-grid{grid-template-columns:1fr}
+}
+@media (max-width:600px){
+.case-study-shell{padding:1rem}
+.case-study-top{flex-direction:column}
+.case-study-grid{grid-template-columns:1fr}
+.github-stats{grid-template-columns:repeat(2,1fr)}
+.github-heatmap{gap:2px}
+}
+@media (prefers-reduced-motion:reduce){
+.github-panel::before{animation:none}
+.case-study-step,.github-repo{transition:none}
+}
