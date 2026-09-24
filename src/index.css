@@ -746,3 +746,17 @@ body {
 .project-feature-body{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;margin-bottom:1rem}
 .project-card-featured .project-feature-visual{min-height:230px}
 @media(max-width:700px){.project-feature-body{grid-template-columns:1fr}.project-card-featured{grid-column:auto}}
+
+/* CampusSync live iframe inside the original project-card design */
+.project-live-preview{padding:0!important;min-height:260px;overflow:hidden;background:#020609}
+.project-browser{height:100%;min-height:260px;background:#020609}
+.project-browser-bar{height:30px;display:flex;align-items:center;gap:.55rem;padding:0 .65rem;border-bottom:1px solid var(--border);font:7px 'Space Mono',monospace;color:var(--muted)}
+.project-browser-bar .browser-dots{display:flex;gap:4px;flex-shrink:0}.project-browser-bar .browser-dots i{width:6px;height:6px;border-radius:50%;border:1px solid var(--border2)}
+.project-browser-bar .browser-address{flex:1;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.project-browser-bar .browser-live{color:var(--cyan);letter-spacing:1px}
+.project-iframe-wrap{position:relative;height:calc(100% - 30px);min-height:230px;overflow:hidden}
+.project-iframe-wrap iframe{width:100%;height:100%;min-height:230px;border:0;display:block;background:white}
+.iframe-overlay{position:absolute;inset:0;display:flex;align-items:flex-end;justify-content:flex-end;padding:.75rem;background:linear-gradient(transparent 65%,rgba(0,0,0,.72));opacity:0;transition:opacity .25s;pointer-events:none}
+.project-live-preview:hover .iframe-overlay{opacity:1}
+.iframe-overlay a{pointer-events:auto;color:var(--cyan);border:1px solid var(--border2);background:rgba(3,8,12,.92);padding:.45rem .65rem;font:8px 'Space Mono',monospace;text-decoration:none;letter-spacing:1px}
+@media(max-width:700px){.project-live-preview{min-height:220px}.project-browser{min-height:220px}.project-iframe-wrap{min-height:190px}.project-iframe-wrap iframe{min-height:190px}}
