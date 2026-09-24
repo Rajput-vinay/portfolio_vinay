@@ -843,3 +843,7 @@ a,button,input,textarea{cursor:pointer}
 @media(max-width:900px){.hero-hud{right:1rem;top:8rem;opacity:.7}}
 @media(max-width:600px){.hero-hud{display:none}.hero-stats{gap:1rem}}
 @media(prefers-reduced-motion:reduce){.hero-hud span{animation:none}}
+
+
+.cert-grid .tilt-card{background:linear-gradient(145deg,rgba(0,229,255,.055),transparent 45%),var(--bg2)}
+.cert-seal{position:absolute;right:1rem;top:1rem;width:34px;height:34px;border:1px solid var(--border2);border-radius:50%;display:grid;place-items:center;color:var(--cyan);font:14px 'Space Mono',monospace;box-shadow:0 0 20px var(--cyan3)}
