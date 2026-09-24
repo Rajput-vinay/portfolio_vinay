@@ -1,4 +1,4 @@
-export const NAV_ITEMS = ['about', 'qualification', 'skills', 'projects', 'experience', 'activities', 'certifications', 'contact'];
+export const NAV_ITEMS = ['about', 'qualification', 'skills', 'case-study', 'projects', 'experience', 'activities', 'certifications', 'github', 'contact'];
 
 export const PROJECT_CATEGORIES = [
   {
