@@ -2,6 +2,29 @@ import React from "react";
 import { Section, SectionHeader, TagRow } from "./UI";
 import { PROJECT_CATEGORIES } from "../data";
 
+function FeaturedCampusSync() {
+  return (
+    <article className="project-feature">
+      <div className="project-feature-visual" aria-hidden="true">
+        <div className="project-feature-screen">
+          <div className="project-feature-lines"><span/><span/><span/><span/></div>
+        </div>
+      </div>
+      <div style={{display:'flex',flexDirection:'column',justifyContent:'center'}}>
+        <div style={{font:'10px Space Mono,monospace',color:'var(--cyan)',letterSpacing:'3px',marginBottom:'.75rem'}}>FEATURED / 01</div>
+        <h3 style={{fontSize:'2rem',marginBottom:'.5rem'}}>CampusSync</h3>
+        <p style={{color:'var(--cyan)',font:'11px Space Mono,monospace',letterSpacing:'1px',marginBottom:'1rem'}}>MERN LMS & INSTITUTE MANAGEMENT PORTAL</p>
+        <p style={{color:'var(--muted)',fontSize:'.85rem',lineHeight:1.8,marginBottom:'1rem'}}>A full-stack institute platform built for NSTI Kanpur with multi-tenant architecture, role-based access, attendance, hostel workflows and AI-powered academic automation.</p>
+        <div style={{marginBottom:'1.2rem'}}><TagRow tags={['React.js','Node.js','MongoDB','Gemini AI','Inngest','Tailwind CSS']}/></div>
+        <div className="project-links">
+          <a className="project-link project-link-live" href="https://campus-sync-phi.vercel.app/" target="_blank" rel="noopener noreferrer">OPEN LIVE ↗</a>
+          <a className="project-link" href="https://github.com/Rajput-vinay/campus_sync" target="_blank" rel="noopener noreferrer">SOURCE ↗</a>
+        </div>
+      </div>
+    </article>
+  );
+}
+
 function ProjectCard({ project, index }) {
   const [hovered, setHovered] = React.useState(false);
 
@@ -59,6 +82,8 @@ export default function Projects() {
   return (
     <Section id="projects">
       <SectionHeader num="03 / WORK" title="Projects" />
+
+      <FeaturedCampusSync />
 
       <div className="project-categories">
         {PROJECT_CATEGORIES.map((category) => (
