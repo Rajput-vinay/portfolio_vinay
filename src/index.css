@@ -850,3 +850,13 @@ a,button,input,textarea{cursor:pointer}
 
 
 .nav-logo-dot{display:inline-block;width:7px;height:7px;border-radius:50%;background:var(--cyan);box-shadow:0 0 12px var(--cyan);margin-right:.45rem;animation:pulse 1.5s infinite}
+
+.github-real-heatmap{grid-template-columns:repeat(52,1fr);grid-template-rows:repeat(7,1fr);grid-auto-flow:column;max-height:126px}
+.github-real-heatmap span{background:rgba(0,229,255,.035);border:1px solid rgba(0,229,255,.05);border-radius:2px}
+.github-real-heatmap .github-level-1{background:rgba(0,229,255,.18)}
+.github-real-heatmap .github-level-2{background:rgba(0,229,255,.36)}
+.github-real-heatmap .github-level-3{background:rgba(0,229,255,.6);box-shadow:0 0 5px rgba(0,229,255,.12)}
+.github-real-heatmap .github-level-4{background:var(--cyan);box-shadow:0 0 9px rgba(0,229,255,.3)}
+.github-graph-footer{display:flex;justify-content:space-between;gap:1rem;align-items:center}
+.github-graph-footer a{font:9px 'Space Mono',monospace;color:var(--cyan);text-decoration:none;letter-spacing:1px}
+@media(max-width:600px){.github-real-heatmap{grid-template-columns:repeat(52,1fr);gap:1px}.github-graph-footer{align-items:flex-start;flex-direction:column}}
