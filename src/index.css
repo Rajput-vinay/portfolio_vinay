@@ -1003,3 +1003,20 @@ a,button,input,textarea{cursor:pointer}
   .experience-connector{display:none}
   .experience-row>.tilt-card{width:100%;margin:0}
 }
+
+/* Qualification timeline: mobile becomes Year -> Card */
+.qualification-row{display:grid;grid-template-columns:90px 20px 1fr;gap:0 1rem;align-items:start;margin-bottom:1.25rem}
+.qualification-year{font-family:'Space Mono',monospace;color:var(--cyan);font-size:.68rem;letter-spacing:2px;padding-top:.3rem;text-align:right;line-height:1.6}
+.qualification-connector{display:flex;flex-direction:column;align-items:center;padding-top:.35rem;height:100%}
+@media(max-width:600px){
+  .qualification-row{display:block;margin-bottom:1.25rem}
+  .qualification-year{
+    display:block;
+    text-align:left;
+    padding:.1rem 0 .55rem .1rem;
+    font-size:.68rem;
+    letter-spacing:1.5px;
+  }
+  .qualification-connector{display:none}
+  .qualification-row>.tilt-card{width:100%;margin:0}
+}
