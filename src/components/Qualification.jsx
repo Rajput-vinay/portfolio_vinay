@@ -9,27 +9,14 @@ export default function Qualification() {
 
       <div style={{ display: 'flex', flexDirection: 'column' }}>
         {QUALIFICATIONS.map((q, i) => (
-          <div
-            key={i}
-            style={{
-              display: 'grid',
-              gridTemplateColumns: '90px 20px 1fr',
-              gap: '0 1rem',
-              alignItems: 'start',
-              marginBottom: '1.25rem',
-            }}
-          >
+          <div key={i} className="qualification-row">
             {/* Year */}
-            <div style={{
-              fontFamily: "'Space Mono', monospace", color: 'var(--cyan)',
-              fontSize: '0.68rem', letterSpacing: '2px',
-              paddingTop: '0.3rem', textAlign: 'right', lineHeight: 1.6,
-            }}>
+            <div className="qualification-year">
               {q.year}
             </div>
 
             {/* Dot + line */}
-            <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', paddingTop: '0.35rem' }}>
+            <div className="qualification-connector">
               <div style={{
                 width: '10px', height: '10px',
                 border: '2px solid var(--cyan)', borderRadius: '50%',
