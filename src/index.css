@@ -681,3 +681,33 @@ body {
     filter: none;
   }
 }
+
+/* ── Premium motion layer ── */
+.portfolio-section{opacity:0;transform:translateY(38px);transition:opacity .75s ease,transform .75s cubic-bezier(.16,1,.3,1)}
+.portfolio-section.is-visible{opacity:1;transform:none}
+.card-shine{position:absolute;inset:0;pointer-events:none;background:linear-gradient(115deg,transparent 25%,rgba(255,255,255,.07) 48%,transparent 65%);transform:translateX(-120%);transition:transform .8s ease}
+.tilt-card:hover .card-shine{transform:translateX(120%)}
+.section-header h2{position:relative;text-shadow:0 0 28px rgba(0,229,255,.08)}
+.section-header::after{content:'SCROLL // EXPLORE // BUILD';display:block;margin-top:.9rem;color:rgba(0,229,255,.28);font:9px 'Space Mono',monospace;letter-spacing:3px}
+.skills-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.25rem}
+.skill-card{min-height:190px;display:flex;flex-direction:column;justify-content:space-between}
+.skill-orbit{width:62px;height:62px;border:1px solid var(--border2);border-radius:50%;display:grid;place-items:center;margin-bottom:1rem;position:relative}
+.skill-orbit::before,.skill-orbit::after{content:'';position:absolute;border:1px solid var(--border);border-radius:50%;inset:7px}
+.skill-orbit::after{inset:18px;background:var(--cyan);box-shadow:0 0 18px var(--cyan);border:0}
+.skill-card:hover .skill-orbit{animation:skillSpin 4s linear infinite}
+@keyframes skillSpin{to{transform:rotate(360deg)}}
+.project-feature{grid-column:1/-1;display:grid;grid-template-columns:1.1fr .9fr;gap:1.5rem;padding:2rem;background:linear-gradient(135deg,rgba(0,229,255,.08),transparent 55%),var(--bg2);border:1px solid var(--border2);position:relative;overflow:hidden}
+.project-feature::after{content:'FEATURED BUILD';position:absolute;right:-42px;top:18px;transform:rotate(35deg);font:10px 'Space Mono',monospace;letter-spacing:3px;color:var(--cyan);background:var(--bg);padding:.45rem 3rem;border:1px solid var(--border2)}
+.project-feature-visual{min-height:280px;border:1px solid var(--border);background:radial-gradient(circle at 50% 45%,rgba(0,229,255,.15),transparent 35%),linear-gradient(135deg,#07131d,#03070b);display:grid;place-items:center;perspective:700px}
+.project-feature-screen{width:78%;height:70%;border:1px solid var(--border2);background:rgba(2,8,12,.9);box-shadow:0 0 40px rgba(0,229,255,.1);transform:rotateX(8deg) rotateY(-10deg) rotateZ(1deg);padding:1rem;position:relative}
+.project-feature-screen::before{content:'CAMPUSSYNC / DASHBOARD';display:block;color:var(--cyan);font:9px 'Space Mono',monospace;letter-spacing:2px;border-bottom:1px solid var(--border);padding-bottom:.6rem}
+.project-feature-lines{display:grid;grid-template-columns:1.4fr .8fr;gap:.5rem;margin-top:.7rem;height:75%}
+.project-feature-lines span{display:block;border:1px solid var(--border);background:linear-gradient(90deg,rgba(0,229,255,.08),transparent);position:relative}
+.project-feature-lines span::after{content:'';position:absolute;left:10%;right:25%;top:35%;height:3px;background:var(--cyan);opacity:.35;box-shadow:0 18px 0 rgba(0,229,255,.18),0 36px 0 rgba(0,229,255,.1)}
+.terminal-card{font-family:'Space Mono',monospace;background:#03080c;border:1px solid var(--border2);padding:1.25rem;box-shadow:inset 0 0 40px rgba(0,229,255,.025)}
+.terminal-bar{display:flex;gap:6px;margin-bottom:1rem}.terminal-dot{width:7px;height:7px;border-radius:50%;background:var(--border2)}
+.terminal-line{font-size:.72rem;color:var(--muted);line-height:2}.terminal-line b{color:var(--cyan);font-weight:400}
+.contact-terminal{margin-top:2rem}
+@media(max-width:800px){.project-feature{grid-template-columns:1fr}.project-feature-visual{min-height:220px}.project-feature::after{font-size:8px}}
+@media(max-width:600px){.portfolio-section{padding:4rem 1.25rem}.section-header h2{font-size:2rem}.section-header::after{font-size:7px;letter-spacing:2px}.project-feature{padding:1.25rem}.project-feature-screen{width:88%}}
+@media(prefers-reduced-motion:reduce){.portfolio-section{opacity:1;transform:none;transition:none}.skill-card:hover .skill-orbit{animation:none}.card-shine{display:none}}
