@@ -33,15 +33,32 @@ export function SectionHeader({ num, title }) {
 /* ── Hover card ── */
 export function Card({ children, style = {} }) {
   const [hovered, setHovered] = React.useState(false);
+  const [tilt, setTilt] = React.useState({ x: 0, y: 0 });
+
+  const handleMove = e => {
+    const rect = e.currentTarget.getBoundingClientRect();
+    const x = (e.clientX - rect.left) / rect.width - 0.5;
+    const y = (e.clientY - rect.top) / rect.height - 0.5;
+    setTilt({ x: y * -5, y: x * 5 });
+  };
+
+  const resetTilt = () => {
+    setHovered(false);
+    setTilt({ x: 0, y: 0 });
+  };
+
   return (
     <div
       onMouseEnter={() => setHovered(true)}
-      onMouseLeave={() => setHovered(false)}
+      onMouseMove={handleMove}
+      onMouseLeave={resetTilt}
       style={{
         background: 'var(--bg2)',
         border: `1px solid ${hovered ? 'var(--border2)' : 'var(--border)'}`,
         padding: '1.5rem', borderRadius: '2px', position: 'relative', overflow: 'hidden',
-        transform: hovered ? 'translateY(-4px)' : 'translateY(0)',
+        transform: hovered
+          ? `perspective(900px) rotateX(${tilt.x}deg) rotateY(${tilt.y}deg) translateY(-5px) translateZ(8px)`
+          : 'perspective(900px) rotateX(0deg) rotateY(0deg) translateY(0) translateZ(0)',
         boxShadow: hovered ? '0 20px 40px rgba(0,0,0,0.4)' : 'none',
         transition: 'border-color 0.3s, transform 0.3s, box-shadow 0.3s',
         ...style,
