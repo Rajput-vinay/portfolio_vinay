@@ -65,8 +65,8 @@ export default function Projects() {
           <div className="project-category" key={category.key}>
             <div className="project-category-heading">
               <div>
-                <span className="project-category-code">{category.code}</span>
-                <h3>{category.label}</h3>
+                <span className="project-category-code project-marquee">{category.code} • {category.code} • {category.code}</span>
+                <h3 className="project-category-title">{category.label}</h3>
               </div>
               <span className="project-count">{String(category.projects.length).padStart(2, "0")} PROJECTS</span>
             </div>
