@@ -111,3 +111,206 @@ body {
     height: 150px;
   }
 }
+
+
+/* ── Categorized project portfolio ── */
+.project-categories {
+  display: flex;
+  flex-direction: column;
+  gap: 4.5rem;
+}
+
+.project-category {
+  position: relative;
+}
+
+.project-category-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+  padding-bottom: 0.9rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.project-category-code {
+  display: block;
+  color: var(--cyan);
+  font-family: 'Space Mono', monospace;
+  font-size: 0.65rem;
+  letter-spacing: 3px;
+  margin-bottom: 0.35rem;
+}
+
+.project-category-heading h3 {
+  font-size: 1.35rem;
+  letter-spacing: -0.4px;
+}
+
+.project-count {
+  color: var(--muted);
+  font-family: 'Space Mono', monospace;
+  font-size: 0.62rem;
+  letter-spacing: 1.5px;
+  white-space: nowrap;
+}
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.25rem;
+}
+
+.project-card {
+  background: var(--bg2);
+  border: 1px solid var(--border);
+  border-radius: 2px;
+  overflow: hidden;
+  position: relative;
+  padding: 1.5rem;
+  min-height: 100%;
+  opacity: 0;
+  animation: projectReveal 0.65s cubic-bezier(.2,.8,.2,1) forwards;
+  transition: transform 0.35s ease, border-color 0.35s ease, box-shadow 0.35s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-8px);
+  border-color: var(--border2);
+  box-shadow: 0 24px 55px rgba(0,0,0,0.42), 0 0 35px var(--cyan3);
+}
+
+.project-card-glow {
+  position: absolute;
+  inset: 0 0 auto 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--cyan), transparent);
+  transition: opacity 0.3s ease;
+}
+
+.project-card-top,
+.project-title-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.project-card-top {
+  margin-bottom: 1.2rem;
+}
+
+.project-number {
+  color: var(--muted);
+  font-family: 'Space Mono', monospace;
+  font-size: 0.7rem;
+  letter-spacing: 2px;
+}
+
+.project-links {
+  display: flex;
+  gap: 0.45rem;
+  flex-wrap: wrap;
+}
+
+.project-link {
+  color: var(--muted);
+  border: 1px solid var(--border);
+  padding: 0.28rem 0.55rem;
+  text-decoration: none;
+  font-family: 'Space Mono', monospace;
+  font-size: 0.6rem;
+  letter-spacing: 1.2px;
+  transition: all 0.2s ease;
+}
+
+.project-link:hover,
+.project-link-live {
+  color: var(--cyan);
+  border-color: var(--border2);
+  background: var(--cyan3);
+  transform: translateY(-1px);
+}
+
+.project-title-row {
+  align-items: baseline;
+  margin-bottom: 0.5rem;
+}
+
+.project-title-row h3 {
+  font-size: 1.35rem;
+  font-weight: 800;
+  letter-spacing: -0.5px;
+}
+
+.project-deploy {
+  color: var(--muted);
+  border: 1px solid var(--border);
+  padding: 0.15rem 0.45rem;
+  font-family: 'Space Mono', monospace;
+  font-size: 0.58rem;
+  letter-spacing: 1px;
+}
+
+.project-tagline {
+  color: var(--cyan);
+  font-family: 'Space Mono', monospace;
+  font-size: 0.68rem;
+  letter-spacing: 1.6px;
+  margin-bottom: 1rem;
+  opacity: 0.82;
+}
+
+.project-highlights {
+  margin-bottom: 1rem;
+}
+
+.project-highlight {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5rem;
+  margin-bottom: 0.45rem;
+  color: var(--text);
+  font-size: 0.8rem;
+  line-height: 1.62;
+}
+
+.project-highlight > span:first-child {
+  color: var(--cyan);
+  flex-shrink: 0;
+}
+
+.project-stack {
+  border-top: 1px solid var(--border);
+  padding-top: 1rem;
+  margin-top: auto;
+}
+
+.project-stack-label {
+  color: var(--muted);
+  font-family: 'Space Mono', monospace;
+  font-size: 0.6rem;
+  letter-spacing: 3px;
+  margin-bottom: 0.6rem;
+}
+
+@keyframes projectReveal {
+  from { opacity: 0; transform: translateY(28px) scale(0.98); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .project-card { animation: none; opacity: 1; }
+}
+
+@media (max-width: 600px) {
+  .project-category-heading {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+  .projects-grid {
+    grid-template-columns: 1fr;
+  }
+}
