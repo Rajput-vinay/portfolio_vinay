@@ -974,3 +974,15 @@ a,button,input,textarea{cursor:pointer}
   .experience-card{padding:.85rem}
   .experience-card h3{font-size:.95rem}
 }
+
+/* ── Experience: clean card layout, no timeline on mobile ── */
+.experience-list{display:flex;flex-direction:column;gap:1.25rem}
+.experience-item{display:block}
+.experience-card{padding:1.4rem}
+@media(max-width:600px){
+  .experience-list{gap:1rem}
+  .experience-item{display:block}
+  .experience-card{padding:1rem}
+  .experience-card-head{display:flex;flex-direction:column;gap:.6rem}
+  .experience-period{order:-1;text-align:left}
+}
