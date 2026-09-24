@@ -314,3 +314,132 @@ body {
     grid-template-columns: 1fr;
   }
 }
+
+
+/* ── 3D project cards + running text ── */
+.project-category-heading {
+  perspective: 900px;
+}
+
+.project-category-title {
+  position: relative;
+  display: inline-block;
+  animation: categoryFloat 3s ease-in-out infinite;
+  text-shadow: 0 0 20px var(--cyan3);
+}
+
+.project-marquee {
+  display: block;
+  width: min(520px, 72vw);
+  overflow: hidden;
+  white-space: nowrap;
+  color: var(--cyan);
+  opacity: 0.72;
+  text-transform: uppercase;
+  animation: marqueeText 12s linear infinite;
+  transform: translateZ(25px);
+}
+
+.project-card {
+  transform-style: preserve-3d;
+  will-change: transform;
+  background:
+    linear-gradient(145deg, rgba(0,229,255,0.055), transparent 38%),
+    var(--bg2);
+}
+
+.project-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: linear-gradient(
+    125deg,
+    transparent 0%,
+    rgba(255,255,255,0.09) 42%,
+    transparent 55%
+  );
+  transform: translateX(-120%);
+  transition: transform 0.8s ease;
+}
+
+.project-card:hover::before {
+  transform: translateX(120%);
+}
+
+.project-card:hover {
+  transform: perspective(1000px) rotateX(4deg) rotateY(-4deg) translateY(-10px) scale(1.015);
+  box-shadow:
+    0 30px 70px rgba(0,0,0,0.5),
+    0 0 30px var(--cyan3),
+    inset 0 0 30px rgba(0,229,255,0.035);
+}
+
+.project-card > *:not(.project-card-glow) {
+  position: relative;
+  z-index: 1;
+  transform: translateZ(18px);
+}
+
+.project-card-glow {
+  height: 3px;
+  box-shadow: 0 0 22px var(--cyan), 0 0 45px var(--cyan);
+}
+
+.project-link {
+  transform: translateZ(28px);
+}
+
+.project-link:hover {
+  transform: translateZ(35px) translateY(-3px) scale(1.04);
+}
+
+.project-tagline {
+  overflow: hidden;
+  white-space: nowrap;
+  position: relative;
+}
+
+.project-tagline::after {
+  content: " // LIVE BUILD // ";
+  display: inline-block;
+  margin-left: 1rem;
+  animation: blinkBuild 1.2s steps(2, end) infinite;
+}
+
+@keyframes marqueeText {
+  0% { transform: translateX(0) translateZ(25px); }
+  100% { transform: translateX(-18% ) translateZ(25px); }
+}
+
+@keyframes categoryFloat {
+  0%, 100% { transform: translateY(0) rotateX(0); }
+  50% { transform: translateY(-3px) rotateX(2deg); }
+}
+
+@keyframes blinkBuild {
+  0%, 45% { opacity: 0.25; }
+  46%, 100% { opacity: 0.9; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .project-category-title,
+  .project-marquee,
+  .project-tagline::after {
+    animation: none;
+  }
+
+  .project-card:hover {
+    transform: translateY(-6px);
+  }
+}
+
+@media (max-width: 600px) {
+  .project-tagline {
+    white-space: normal;
+  }
+
+  .project-tagline::after {
+    display: none;
+  }
+}
