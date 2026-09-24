@@ -986,3 +986,20 @@ a,button,input,textarea{cursor:pointer}
   .experience-card-head{display:flex;flex-direction:column;gap:.6rem}
   .experience-period{order:-1;text-align:left}
 }
+
+/* Experience timeline: mobile becomes Year -> Card */
+.experience-row{display:grid;grid-template-columns:130px 20px 1fr;gap:0 1rem;align-items:start;margin-bottom:1.5rem}
+.experience-year{font-family:'Space Mono',monospace;color:var(--cyan);font-size:.65rem;letter-spacing:1px;line-height:1.6;padding-top:.3rem;text-align:right}
+.experience-connector{display:flex;flex-direction:column;align-items:center;padding-top:.35rem;height:100%}
+@media(max-width:600px){
+  .experience-row{display:block;margin-bottom:1.5rem}
+  .experience-year{
+    display:block;
+    text-align:left;
+    padding:0 0 .55rem .1rem;
+    font-size:.68rem;
+    letter-spacing:1.5px;
+  }
+  .experience-connector{display:none}
+  .experience-row>.tilt-card{width:100%;margin:0}
+}
