@@ -1,52 +1,45 @@
 export const NAV_ITEMS = ['about', 'qualification', 'skills', 'projects', 'experience', 'activities', 'certifications', 'contact'];
 
-export const PROJECTS = [
+export const PROJECT_CATEGORIES = [
   {
-    num: '01',
-    name: 'CampusSync',
-    live: true,
-    liveLink: 'https://campus-sync-phi.vercel.app/',
-    githubLink: 'https://github.com/Rajput-vinay/campus_sync',
-    tagline: 'MERN LMS & Institute Management Portal',
-    highlights: [
-      'Designed a scalable MERN-based Learning Management System (LMS) and Institute Management Portal for National Skill Training Institute (NSTI), Kanpur.',
-      'Built a multi-tenant architecture with Super Admin capabilities, Role-Based Access Control (RBAC), AI-driven timetable and exam generation, attendance tracking, and hostel management.',
-      'Streamlined workflows with automated email notifications and distance-based hostel allocation using Google Gemini AI, Inngest, Nodemailer, and PositionStack API.',
+    key: 'frontend',
+    label: 'Frontend Projects',
+    code: '01 / FRONTEND',
+    projects: [
+      { num: '01', name: 'Weather App', live: true, liveLink: 'https://weather-app-wine-theta.vercel.app/', githubLink: 'https://github.com/Rajput-vinay/WeatherApp', tagline: 'Real-Time Weather Application', highlights: ['Built a responsive weather application with a clean UI and real-time weather data.', 'Designed for fast interaction and responsive layouts across devices.'], stack: ['HTML','CSS','JavaScript','Weather API'], deploy: 'Vercel' },
+      { num: '02', name: 'Password Generator', live: true, liveLink: 'https://password-generator-app-rho-pink.vercel.app/', githubLink: 'https://github.com/Rajput-vinay/PasswordGeneratorApp', tagline: 'Secure Password Generator', highlights: ['Created a lightweight password generator with configurable password creation.', 'Focused on a simple, responsive and user-friendly interface.'], stack: ['React.js','JavaScript','CSS'], deploy: 'Vercel' },
+      { num: '03', name: 'YouTube Lite', live: true, liveLink: 'https://youtube-lite-three.vercel.app/', githubLink: 'https://github.com/Rajput-vinay/youtube_lite', tagline: 'YouTube-Inspired Video Interface', highlights: ['Built a YouTube-inspired frontend with video browsing and interactive UI sections.', 'Implemented responsive layouts with modern React patterns.'], stack: ['React.js','Tailwind CSS','Redux'], deploy: 'Vercel' },
+      { num: '04', name: 'Tic Tac Toe', live: true, liveLink: 'https://tic-tae-toe-woad.vercel.app/', githubLink: 'https://github.com/Rajput-vinay', tagline: 'Interactive Browser Game', highlights: ['Built an interactive Tic Tac Toe game with game-state handling and a responsive interface.', 'Focused on reusable UI logic and smooth player interaction.'], stack: ['HTML','CSS','JavaScript'], deploy: 'Vercel' },
+      { num: '05', name: 'Thunder Landing Page', live: true, liveLink: 'https://thunder-landing-page-ecru.vercel.app/', githubLink: 'https://github.com/Rajput-vinay', tagline: 'Modern Product Landing Page', highlights: ['Designed a modern landing page for the Thunder product experience.', 'Focused on polished sections, responsive presentation and conversion-oriented UI.'], stack: ['React.js','Tailwind CSS'], deploy: 'Vercel' },
     ],
-    stack: ['React.js', 'Node.js', 'Express.js', 'MongoDB', 'Tailwind CSS', 'Google Gemini AI', 'Inngest', 'Nodemailer', 'PositionStack API'],
-    deploy: 'Vercel',
   },
   {
-    num: '02',
-    name: 'Vidya-Sankalp',
-    live: true,
-    liveLink:"https://vidya-sankalp.vercel.app/",
-    githubLink: 'https://github.com/Rajput-vinay',
-    tagline: 'Ed-Tech Learning Platform',
-    highlights: [
-      'Built a fully functional ed-tech platform using the MERN stack ensuring a robust and interactive learning experience.',
-      'Designed an intuitive interface with React.js and Tailwind CSS, increasing student interaction by 30–40%.',
-      'Emphasized accessibility and seamless UX across all device sizes.',
+    key: 'backend',
+    label: 'Backend Projects',
+    code: '02 / BACKEND',
+    projects: [
+      { num: '01', name: 'Todo App API', live: false, liveLink: null, githubLink: 'https://github.com/Rajput-vinay/backend-app-todo-app.git', tagline: 'RESTful Todo Backend', highlights: ['Built backend APIs for todo management and CRUD workflows.', 'Structured the project around server-side routing, controllers and persistent data handling.'], stack: ['Node.js','Express.js','MongoDB'], deploy: 'GitHub' },
+      { num: '02', name: 'Blog App API', live: false, liveLink: null, githubLink: 'https://github.com/Rajput-vinay/backend-blogging-app.git', tagline: 'Blogging Backend Service', highlights: ['Built backend services for creating, updating and managing blog content.', 'Implemented API-oriented server architecture for application integration.'], stack: ['Node.js','Express.js','MongoDB'], deploy: 'GitHub' },
+      { num: '03', name: 'Authentication Service', live: false, liveLink: null, githubLink: 'https://github.com/Rajput-vinay/Authentication_Service.git', tagline: 'Authentication Backend', highlights: ['Built a dedicated authentication service for secure user access workflows.', 'Organized reusable backend logic for authentication and authorization flows.'], stack: ['Node.js','Express.js','MongoDB','JWT'], deploy: 'GitHub' },
+      { num: '04', name: 'Ecommerce Backend', live: false, liveLink: null, githubLink: 'https://github.com/Rajput-vinay/Ecommerce_backend.git', tagline: 'E-Commerce Backend API', highlights: ['Created backend foundations for an e-commerce application and its API workflows.', 'Structured server-side logic for scalable application development.'], stack: ['Node.js','Express.js','MongoDB'], deploy: 'GitHub' },
     ],
-    stack: ['React.js', 'Node.js', 'Express.js', 'MongoDB', 'Tailwind CSS'],
-    deploy: 'Vercel',
   },
   {
-    num: '03',
-    name: 'Thunder.ai',
-    live: true,
-    liveLink:"https://thunder-ai-sigma.vercel.app/",
-    githubLink: 'https://github.com/Rajput-vinay',
-    tagline: 'AI-Powered Website Generator',
-    highlights: [
-      'Integrated Gemini AI for intelligent code generation — generate full React.js websites in under 5 minutes.',
-      'Leveraged AI-driven automation allowing users to create, modify, and export fully functional React.js projects effortlessly.',
-      'Built a real-time preview and customization engine with live export support.',
+    key: 'fullstack',
+    label: 'Full Stack Projects',
+    code: '03 / FULL STACK',
+    projects: [
+      { num: '01', name: 'CampusSync', live: true, liveLink: 'https://campus-sync-phi.vercel.app/', githubLink: 'https://github.com/Rajput-vinay/campus_sync', tagline: 'MERN LMS & Institute Management Portal', highlights: ['Designed a scalable MERN-based Learning Management System and Institute Management Portal for NSTI, Kanpur.', 'Built multi-tenant architecture with RBAC, AI-driven timetable and exam generation, attendance tracking and hostel management.', 'Integrated Google Gemini AI, Inngest, Nodemailer and PositionStack API for automation and smart workflows.'], stack: ['React.js','Node.js','Express.js','MongoDB','Tailwind CSS','Google Gemini AI','Inngest','Nodemailer','PositionStack API'], deploy: 'Vercel' },
+      { num: '02', name: 'Vidya-Sankalp', live: true, liveLink: 'https://vidya-sankalp.vercel.app/', githubLink: 'https://github.com/Rajput-vinay/Vidya-Sankalp', tagline: 'Ed-Tech Learning Platform', highlights: ['Built a full-stack ed-tech platform using the MERN stack for an interactive learning experience.', 'Created responsive UI with React.js and Tailwind CSS with a focus on accessibility and seamless UX.'], stack: ['React.js','Node.js','Express.js','MongoDB','Tailwind CSS'], deploy: 'Vercel' },
+      { num: '03', name: 'Thunder.ai', live: true, liveLink: 'https://thunder-ai-sigma.vercel.app/', githubLink: 'https://github.com/Rajput-vinay/thunder.ai', tagline: 'AI-Powered Website Generator', highlights: ['Integrated Gemini AI for intelligent code generation and React.js website creation.', 'Built AI-driven workflows to create, modify and export functional projects with a real-time preview.'], stack: ['React.js','Tailwind CSS','Express.js','Node.js','ConvexDB','Gemini AI'], deploy: 'Vercel' },
+      { num: '04', name: 'AI Calling Agent', live: true, liveLink: 'https://ai-calling-agent-umber.vercel.app/login', githubLink: 'https://github.com/Rajput-vinay', tagline: 'AI-Powered Calling Application', highlights: ['Developed a full-stack AI Calling Agent with a dedicated login experience and application workflow.', 'Worked on frontend integration and backend connectivity for an AI-powered calling solution.'], stack: ['Next.js','React.js','Node.js','Express.js'], deploy: 'Vercel' },
+      { num: '05', name: 'Job Portal', live: true, liveLink: 'https://job-portal-zeta-ten.vercel.app/', githubLink: 'https://github.com/Rajput-vinay', tagline: 'Full-Stack Job Platform', highlights: ['Built a full-stack job portal experience connecting frontend workflows with backend services.', 'Focused on responsive UI and practical recruitment-oriented user flows.'], stack: ['React.js','Node.js','Express.js','MongoDB'], deploy: 'Vercel' },
+      { num: '06', name: 'Second Brain', live: true, liveLink: 'https://second-brain-frontend-opal.vercel.app/', githubLink: 'https://github.com/Rajput-vinay', tagline: 'Personal Knowledge Management App', highlights: ['Built a full-stack knowledge-management interface for organizing personal information and resources.', 'Designed a modern responsive frontend with connected application workflows.'], stack: ['React.js','Node.js','Express.js','MongoDB'], deploy: 'Vercel' },
     ],
-    stack: ['React.js', 'Tailwind CSS', 'Express.js', 'Node.js', 'ConvexDB', 'Gemini AI'],
-    deploy: 'Vercel',
   },
 ];
+
+export const PROJECTS = PROJECT_CATEGORIES.flatMap(category => category.projects);
 
 export const EXPERIENCE = [
   {
