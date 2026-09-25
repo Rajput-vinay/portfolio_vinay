@@ -46,6 +46,15 @@ function FeaturedCampusSync() {
               <span className="browser-live">LIVE</span>
             </div>
             <div className="project-iframe-wrap">
+              <div className="campus-preview-fallback">
+                <div className="campus-preview-grid" />
+                <div className="campus-preview-content">
+                  <span className="campus-preview-kicker">CAMPUS / SYNC</span>
+                  <strong>MERN LMS &amp; INSTITUTE MANAGEMENT</strong>
+                  <span>AI · RBAC · ATTENDANCE · HOSTEL</span>
+                  <a href={project.liveLink} target="_blank" rel="noopener noreferrer">OPEN LIVE SITE ↗</a>
+                </div>
+              </div>
               <iframe
                 title="CampusSync live preview"
                 src={project.liveLink}
@@ -124,6 +133,8 @@ function ProjectCard({ project, index }) {
     </article>
   );
 }
+
+function CampusIframe() { return null; }
 
 export default function Projects() {
   return (
