@@ -1035,3 +1035,9 @@ a,button,input,textarea{cursor:pointer}
   .project-iframe-wrap iframe{display:none}
   .iframe-overlay{display:none}
 }
+
+/* Project loading performance */
+.project-card{contain:layout paint style}
+.project-card-featured{contain:layout paint}
+.project-iframe-wrap{contain:layout paint}
+@media(max-width:700px){.project-card-featured{contain:layout paint}}
