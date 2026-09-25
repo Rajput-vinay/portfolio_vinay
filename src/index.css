@@ -1020,3 +1020,18 @@ a,button,input,textarea{cursor:pointer}
   .qualification-connector{display:none}
   .qualification-row>.tilt-card{width:100%;margin:0}
 }
+
+/* CampusSync preview: instant lightweight mobile fallback */
+.campus-preview-fallback{display:none;position:absolute;inset:0;overflow:hidden;background:linear-gradient(135deg,#07141b,#020609);align-items:center;justify-content:center}
+.campus-preview-grid{position:absolute;inset:0;background-image:linear-gradient(rgba(0,229,255,.08) 1px,transparent 1px),linear-gradient(90deg,rgba(0,229,255,.08) 1px,transparent 1px);background-size:24px 24px;opacity:.35}
+.campus-preview-content{position:relative;display:flex;flex-direction:column;gap:.55rem;padding:1.25rem;text-align:center;max-width:90%}
+.campus-preview-kicker{font:8px 'Space Mono',monospace;letter-spacing:3px;color:var(--cyan)}
+.campus-preview-content strong{font-size:1rem;line-height:1.3}
+.campus-preview-content>span:last-of-type{font:8px 'Space Mono',monospace;color:var(--muted);line-height:1.6}
+.campus-preview-content a{align-self:center;margin-top:.5rem;padding:.55rem .7rem;border:1px solid var(--border2);color:var(--cyan);font:8px 'Space Mono',monospace;text-decoration:none}
+@media(max-width:700px){
+  .project-iframe-wrap{min-height:190px}
+  .campus-preview-fallback{display:flex}
+  .project-iframe-wrap iframe{display:none}
+  .iframe-overlay{display:none}
+}
