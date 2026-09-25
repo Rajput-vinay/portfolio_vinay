@@ -3,7 +3,7 @@ import React from 'react';
 /* ── Section wrapper ── */
 export function Section({ id, children, style = {} }) {
   return (
-    <section id={id} className="portfolio-section reveal" style={{
+    <section id={id} className="portfolio-section reveal is-visible" style={{
       position:'relative', zIndex:1, padding:'5rem 3rem', maxWidth:'1100px', margin:'0 auto', ...style
     }}>
       {children}
