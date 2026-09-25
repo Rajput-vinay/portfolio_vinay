@@ -19,6 +19,8 @@ function FeaturedCampusSync() {
   };
   const [hovered,setHovered] = React.useState(false);
   const [isMobile,setIsMobile] = React.useState(false);
+  const [loadPreview,setLoadPreview] = React.useState(false);
+  const previewRef = React.useRef(null);
 
   React.useEffect(() => {
     const media = window.matchMedia('(max-width: 700px)');
@@ -27,6 +29,18 @@ function FeaturedCampusSync() {
     media.addEventListener('change', update);
     return () => media.removeEventListener('change', update);
   }, []);
+
+  React.useEffect(() => {
+    if (isMobile || !previewRef.current) return;
+    const observer = new IntersectionObserver(([entry]) => {
+      if (entry.isIntersecting) {
+        setLoadPreview(true);
+        observer.disconnect();
+      }
+    }, { rootMargin: '500px 0px' });
+    observer.observe(previewRef.current);
+    return () => observer.disconnect();
+  }, [isMobile]);
   return (
     <article
       className="project-card project-card-featured"
@@ -54,7 +68,7 @@ function FeaturedCampusSync() {
               <span className="browser-address">campus-sync-phi.vercel.app</span>
               <span className="browser-live">LIVE</span>
             </div>
-            <div className="project-iframe-wrap">
+            <div className="project-iframe-wrap" ref={previewRef}>
               <div className="campus-preview-fallback">
                 <div className="campus-preview-grid" />
                 <div className="campus-preview-content">
@@ -64,7 +78,7 @@ function FeaturedCampusSync() {
                   <a href={project.liveLink} target="_blank" rel="noopener noreferrer">OPEN LIVE SITE ↗</a>
                 </div>
               </div>
-              {!isMobile && <iframe
+              {!isMobile && loadPreview && <iframe
                 title="CampusSync live preview"
                 src={project.liveLink}
                 loading="lazy"
