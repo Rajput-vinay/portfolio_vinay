@@ -170,9 +170,8 @@ body {
   position: relative;
   padding: 1.5rem;
   min-height: 100%;
-  opacity: 0;
-  animation: projectReveal 0.65s cubic-bezier(.2,.8,.2,1) forwards;
-  transition: transform 0.35s ease, border-color 0.35s ease, box-shadow 0.35s ease;
+  opacity: 1;
+  transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
 }
 
 .project-card:hover {
@@ -1041,3 +1040,13 @@ a,button,input,textarea{cursor:pointer}
 .project-card-featured{contain:layout paint}
 .project-iframe-wrap{contain:layout paint}
 @media(max-width:700px){.project-card-featured{contain:layout paint}}
+
+/* Project section: render immediately; avoid delayed entrance work */
+.project-card{animation:none!important;opacity:1!important}
+@media(max-width:600px){
+  .project-card{transform-style:flat;will-change:auto}
+  .project-card>*:not(.project-card-glow){transform:none}
+  .project-category-title,.project-marquee{animation:none;transform:none}
+  .project-card:hover{transform:translateY(-3px);box-shadow:0 12px 28px rgba(0,0,0,.3),0 0 16px var(--cyan3)}
+  .project-card:hover::before{transform:translateX(-120%)}
+}
