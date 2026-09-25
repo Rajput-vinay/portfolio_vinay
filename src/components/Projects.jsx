@@ -18,6 +18,15 @@ function FeaturedCampusSync() {
     deploy: 'Vercel'
   };
   const [hovered,setHovered] = React.useState(false);
+  const [isMobile,setIsMobile] = React.useState(false);
+
+  React.useEffect(() => {
+    const media = window.matchMedia('(max-width: 700px)');
+    const update = () => setIsMobile(media.matches);
+    update();
+    media.addEventListener('change', update);
+    return () => media.removeEventListener('change', update);
+  }, []);
   return (
     <article
       className="project-card project-card-featured"
@@ -55,12 +64,12 @@ function FeaturedCampusSync() {
                   <a href={project.liveLink} target="_blank" rel="noopener noreferrer">OPEN LIVE SITE ↗</a>
                 </div>
               </div>
-              <iframe
+              {!isMobile && <iframe
                 title="CampusSync live preview"
                 src={project.liveLink}
                 loading="lazy"
                 allow="clipboard-read; clipboard-write"
-              />
+              />}
               <div className="iframe-overlay">
                 <a href={project.liveLink} target="_blank" rel="noopener noreferrer">OPEN FULL SITE ↗</a>
               </div>
@@ -133,8 +142,6 @@ function ProjectCard({ project, index }) {
     </article>
   );
 }
-
-function CampusIframe() { return null; }
 
 export default function Projects() {
   return (
