@@ -1,8 +1,8 @@
 import React,{useState} from 'react';
 import { NAV_ITEMS } from '../data';
 
-const labels={about:'about',qualification:'education',skills:'skills',projects:'projects',// experience:'experience',activities:'activities',certifications:'certs',github:'github',contact:'contact'};
-
+const labels={about:'about',qualification:'education',skills:'skills',projects:'projects',activities:'activities',certifications:'certs',github:'github',contact:'contact'};
+// experience:'experience',
 export default function Navbar({active,scrollTo}){
   const [open,setOpen]=useState(false);
   return <nav className="site-nav">
