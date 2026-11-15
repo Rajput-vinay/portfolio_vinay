@@ -6,6 +6,7 @@ const labels = {
   qualification: 'education',
   skills: 'skills',
   projects: 'projects',
+  experience: 'experience',
   activities: 'activities',
   certifications: 'certs',
   github: 'github',
